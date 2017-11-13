@@ -1,0 +1,21 @@
+{
+  "name": "food_wallet",
+  "version": "1.0.0",
+  "description": "API service to authorise food for employees",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha ./test/*.js"
+  },
+  "keywords": [
+    "food_wallet"
+  ],
+  "author": "Krishna",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "mocha": "^4.0.1"
+  }
+}
