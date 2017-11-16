@@ -8,5 +8,14 @@ router.auth = (req, res) => {
   })
 };
 
+router.default = (req, res) => {
+  res.send({
+    status: 404,
+    err: {
+      msg: 'Route not found'
+    }
+  });
+};
+
 module.exports = router;
 

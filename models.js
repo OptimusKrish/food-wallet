@@ -19,7 +19,7 @@ models.errorMsg = () => {
     const err = {
       status: 404,
       err: {
-        msg: 'Not found'
+        msg: 'Not authorized'
       }
     };
     resolve(err);

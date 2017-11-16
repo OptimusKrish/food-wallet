@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: food-wallet
+  labels:
+    lapp: food-wallet
+spec:
+  containers:
+    - name: food-wallet
+      image: food-wallet-service:7f4032d25147d35bee88c05e8763c6432fb48a70
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 8000
+---
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: food-wallet
+spec:
+  rules:
+  - host: food-wallet
+    http:
+      paths:
+      - backend:
+          serviceName: food-wallet
+          servicePort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: food-wallet
+spec:
+  selector:
+    lapp: food-wallet
+  ports:
+  - port: 80
+    targetPort: 8000
